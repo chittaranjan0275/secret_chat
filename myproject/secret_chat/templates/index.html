@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>secret.chat</title>
+
+
+</head>
+<body >
+welcome to
+<h1 style="color:MediumSeaGreen">SECRET CHAT
+
+
+
+</h1>
+privacy comes first....!!!!
+<br>
+<br>
+
+
+
+
+<h3>Generate link</h3>
+<form action="/secret_chat/generator/"  method="post">
+    {% csrf_token %}
+   <input type="submit" value="get link"><br><br>
+</form>
+
+<ul>
+    {% for session_obj in session_objs%}
+    <li>link is: <h3 style="color:blue;"><a href="/secret_chat/chat/{{session_obj.link_slug}}" >http://127.0.0.1:8000/secret_chat/chat/{{session_obj.link_slug}}</a> </h3></li><br>
+    <li>password is<h3 style="color:blue;"> {{session_obj.key}}</h3></li>
+
+    {%endfor%}
+</ul>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="right:0px; top:300px;">
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+</body>
+</html>
